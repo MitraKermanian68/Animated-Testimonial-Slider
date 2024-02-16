@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Testimonial Slider</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9bf81300c6.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="testimonial">
+        <div class="testimonial_text">
+          <div class="user_text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+              reprehenderit, dolor officiis omnis at sequi quia adipisci
+              voluptas magnam exercitationem laudantium ea perspiciatis
+              asperiores repellendus architecto, neque odio explicabo. Voluptas?
+            </p>
+            <span>JOHN RAYAN</span>
+          </div>
+          <div class="user_text active_text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+              reprehenderit, dolor officiis omnis at sequi quia adipisci
+              voluptas magnam exercitationem laudantium ea perspiciatis
+              asperiores repellendus architecto, neque odio explicabo. Voluptas?
+            </p>
+            <span>MAYA DELRI</span>
+          </div>
+          <div class="user_text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+              reprehenderit, dolor officiis omnis at sequi quia adipisci
+              voluptas magnam exercitationem laudantium ea perspiciatis
+              asperiores repellendus architecto, neque odio explicabo. Voluptas?
+            </p>
+            <span>MIA MOBA</span>
+          </div>
+          <div class="user_text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+              reprehenderit, dolor officiis omnis at sequi quia adipisci
+              voluptas magnam exercitationem laudantium ea perspiciatis
+              asperiores repellendus architecto, neque odio explicabo. Voluptas?
+            </p>
+            <span>AMANDA MANDI</span>
+          </div>
+          <div class="user_text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+              reprehenderit, dolor officiis omnis at sequi quia adipisci
+              voluptas magnam exercitationem laudantium ea perspiciatis
+              asperiores repellendus architecto, neque odio explicabo. Voluptas?
+            </p>
+            <span>NINA FIARE</span>
+          </div>
+        </div>
+        <div class="testimonial_pic">
+          <img
+            src="./images/1.jpg"
+            draggable="false"
+            class="user_pic"
+            onclick="showReview()"
+          />
+          <img
+            src="./images/2.jpg"
+            draggable="false"
+            class="user_pic active-pic"
+            onclick="showReview()"
+          />
+          <img
+            src="./images/2.webp"
+            draggable="false"
+            class="user_pic"
+            onclick="showReview()"
+          />
+          <img
+            src="./images/3.jpg"
+            draggable="false"
+            class="user_pic"
+            onclick="showReview()"
+          />
+          <img
+            src="./images/4.jpg"
+            draggable="false"
+            class="user_pic"
+            onclick="showReview()"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let userTexts = document.getElementsByClassName("user_text");
+      let userPics = document.getElementsByClassName("user_pic");
+
+      function showReview() {
+        for (userPic of userPics) {
+          userPic.classList.remove("active-pic");
+        }
+        for (userText of userTexts) {
+          userText.classList.remove("active_text");
+        }
+        let i = Array.from(userPics).indexOf(event.target); 
+
+        userPics[i].classList.add("active-pic");
+        userTexts[i].classList.add("active_text");
+      }
+    </script>
+  </body>
+</html>
